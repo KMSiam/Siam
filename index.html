@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
         <meta name="author" content="K.M. Siam">
         
         <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="K.M. Siam - CSE Student Portfolio">
+        <meta property="og:title" content="K.M. Siam - CSE Student & Web Developer Portfolio">
         <meta property="og:description" content="Computer Science Engineering student passionate about web development and programming">
         <meta property="og:type" content="website">
         
@@ -20,256 +20,348 @@
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>K.M.Siam_Portfolio</title>
+        <title>K.M. Siam | Portfolio</title>
     </head>
     <body>
+        <!--===== PRELOADER =====-->
+        <div class="preloader" id="preloader">
+            <div class="preloader__spinner"></div>
+        </div>
+
+        <!--===== PARTICLE BACKGROUND =====-->
+        <canvas id="particles-canvas"></canvas>
+
         <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">Siam</a>
-                </div>
+        <header class="l-header" id="header">
+            <nav class="nav">
+                <a href="#" class="nav__logo">Siam.</a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
+                <div class="nav__actions">
+                    <button class="nav__theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class='bx bx-moon' id="theme-icon"></i>
+                    </button>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-menu'></i>
+                    </div>
                 </div>
             </nav>
         </header>
 
         <main class="l-main">
             <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Siam</span><br> CSE Student</h1>
-                    <p class="home__subtitle">Computer Science Engineering student at Southeast University, passionate about creating innovative solutions through code.</p>
-                    
-                    <div class="home__buttons">
-                        <a href="#contact" class="button">Get In Touch</a>
-                        <a href="assets/K.M.Siam_CV.pdf" class="button button--ghost" download>Download CV</a>
+            <section class="home" id="home">
+                <div class="home__container">
+                    <div class="home__data">
+                        <span class="home__greeting">Hello, I'm</span>
+                        <h1 class="home__title">K.M. <span class="home__title-color">Siam</span></h1>
+                        <div class="home__typing-wrapper">
+                            <span class="home__typing-text" id="typing-text"></span>
+                        </div>
+                        <p class="home__subtitle">Computer Science Engineering student at Southeast University, passionate about creating innovative solutions through code.</p>
+                        
+                        <div class="home__buttons">
+                            <a href="#contact" class="button button--primary">Get In Touch <i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="assets/K.M.Siam_CV.pdf" class="button button--ghost" download>Download CV <i class='bx bx-download'></i></a>
+                        </div>
+
+                        <div class="home__social">
+                            <a href="https://www.linkedin.com/in/km-siam-973723291/" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                            <a href="https://www.facebook.com/share/1HGp73rfXc/" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                            <a href="https://www.instagram.com/k.m.siam15?igsh=bzZtbXlmZGlpeDF3" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                            <a href="https://github.com/KMSiam" target="_blank" rel="noopener noreferrer" class="home__social-icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/km-siam-973723291/" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://www.facebook.com/share/1HGp73rfXc/" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class='bx bxl-facebook' ></i></a>
-                    <a href="https://www.instagram.com/k.m.siam15?igsh=bzZtbXlmZGlpeDF3" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class='bx bxl-instagram' ></i></a>
-                    <a href="https://github.com/KMSiam" target="_blank" rel="noopener noreferrer" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                </div>
-
-                <div class="home__img">
-                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <mask id="mask0" mask-type="alpha">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
-                        </g>
-                    </svg>
+                    <div class="home__img">
+                        <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                                <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
             </section>
 
             <!--===== ABOUT =====-->
             <section class="about section" id="about">
-                <h2 class="section-title">About</h2>
+                <div class="container">
+                    <h2 class="section-title reveal">About Me</h2>
+                    <p class="section-subtitle reveal">Get to know me better</p>
 
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/about.jpg" alt="Siam - Computer Science Student at Southeast University">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">I'm K.M. Siam</h2>
-                        <p class="about__text">I'm a passionate Computer Science Engineering student at Southeast University with a strong foundation in programming and web development. I enjoy creating innovative solutions and learning new technologies. My goal is to become a skilled software developer and contribute to meaningful projects that make a positive impact.</p>
-                        
-                        <div class="about__info">
-                            <div class="about__info-item">
-                                <span class="about__info-title">15+</span>
-                                <span class="about__info-name">Projects<br>Completed</span>
-                            </div>
-                            <div class="about__info-item">
-                                <span class="about__info-title">6+</span>
-                                <span class="about__info-name">Months<br>Experience</span>
-                            </div>
-                            <div class="about__info-item">
-                                <span class="about__info-title">5+</span>
-                                <span class="about__info-name">Programming<br>Languages</span>
-                            </div>
+                    <div class="about__container">
+                        <div class="about__img-wrapper reveal">
+                            <img src="assets/img/about.jpg" alt="Siam - Computer Science Student at Southeast University">
                         </div>
-                    </div>                                   
+                        
+                        <div class="about__content reveal">
+                            <h2 class="about__subtitle">I'm K.M. Siam</h2>
+                            <p class="about__text">I'm a passionate Computer Science Engineering student at Southeast University with a strong foundation in programming and web development. I enjoy creating innovative solutions and learning new technologies. My goal is to become a skilled software developer and contribute to meaningful projects that make a positive impact.</p>
+                            
+                            <div class="about__info">
+                                <div class="about__info-item">
+                                    <span class="about__info-title" data-count="15">0</span>
+                                    <span class="about__info-name">Projects<br>Completed</span>
+                                </div>
+                                <div class="about__info-item">
+                                    <span class="about__info-title" data-count="6">0</span>
+                                    <span class="about__info-name">Months<br>Experience</span>
+                                </div>
+                                <div class="about__info-item">
+                                    <span class="about__info-title" data-count="5">0</span>
+                                    <span class="about__info-name">Programming<br>Languages</span>
+                                </div>
+                            </div>
+                        </div>                                   
+                    </div>
                 </div>
             </section>
 
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
+                <div class="container">
+                    <h2 class="section-title reveal">Skills & Education</h2>
+                    <p class="section-subtitle reveal">My technical expertise and academic background</p>
 
-                <div class="skills__tabs">
-                    <button class="skills__tab-button active" data-target="skills-content">Professional</button>
-                    <button class="skills__tab-button" data-target="education-content">Educational</button>
-                </div>
-
-                <div class="skills__container bd-grid">
-                    <div id="skills-content" class="skills__content active">
-                        <h2 class="skills__subtitle">Technical Skills</h2>
-                        <p class="skills__text">Technologies and programming languages I work with as a Computer Science student.</p>
-                        
-                        <div class="skills__grid">
-                            <div class="skills__category">
-                                <h3 class="skills__category-title">Frontend</h3>
-                                <div class="skills__list">
-                                    <span class="skills__item"><i class='bx bxl-html5'></i>HTML5</span>
-                                    <span class="skills__item"><i class='bx bxl-css3'></i>CSS3</span>
-                                    <span class="skills__item"><i class='bx bxl-javascript'></i>JavaScript</span>
-                                    <span class="skills__item"><i class='bx bxl-react'></i>React</span>
-                                </div>
-                            </div>
-                            
-                            <div class="skills__category">
-                                <h3 class="skills__category-title">Backend</h3>
-                                <div class="skills__list">
-                                    <span class="skills__item"><i class='bx bx-code-block'></i>Java</span>
-                                    <span class="skills__item"><i class='bx bxl-python'></i>Python</span>
-                                    <span class="skills__item"><i class='bx bx-code-curly'></i>C++</span>
-                                    <span class="skills__item"><i class='bx bx-code-alt'></i>C</span>
-                                    <span class="skills__item"><i class='bx bx-data'></i>MySQL</span>
-                                </div>
-                            </div>
-                            
-                            <div class="skills__category">
-                                <h3 class="skills__category-title">Tools & Others</h3>
-                                <div class="skills__list">
-                                    <span class="skills__item"><i class='bx bxl-git'></i>Git</span>
-                                    <span class="skills__item"><i class='bx bxl-github'></i>GitHub</span>
-                                    <span class="skills__item"><i class='bx bx-mobile-alt'></i>Android Studio</span>
-                                    <span class="skills__item"><i class='bx bxs-paint'></i>Figma</span>
-                                    <span class="skills__item"><i class='bx bx-palette'></i>UI/UX</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="skills__tabs reveal">
+                        <button class="skills__tab-button active" data-target="skills-content">Professional</button>
+                        <button class="skills__tab-button" data-target="education-content">Educational</button>
                     </div>
 
-                    <div id="education-content" class="skills__content">
-                        <h2 class="skills__subtitle">Academic Excellence</h2>
-                        <p class="skills__text">Educational achievements and academic milestones in Computer Science and Engineering.</p>
-                        
-                        <div class="education__content">
-                            <h3 class="education__title">Bachelor of Science in Computer Science & Engineering</h3>
-                            <span class="education__studies">Southeast University, Dhaka</span>
-                            <span class="education__year">2023 - Present (Expected 2027)</span>
-                            <p class="education__description">Pursuing comprehensive education in software engineering, algorithms, data structures, database systems, and artificial intelligence. Maintaining strong academic performance while actively engaging in programming competitions, hackathons, and collaborative software development projects. Specialized coursework includes Object-Oriented Programming, Web Technologies, Software Engineering, and Computer Networks.</p>
+                    <div class="skills__container">
+                        <div id="skills-content" class="skills__content active">
+                            <h3 class="skills__subtitle">Technical Skills</h3>
+                            <p class="skills__text">Technologies and programming languages I work with as a Computer Science student.</p>
+                            
+                            <div class="skills__grid">
+                                <div class="skills__category">
+                                    <h3 class="skills__category-title">Frontend</h3>
+                                    <div class="skills__list">
+                                        <span class="skills__item"><i class='bx bxl-html5'></i>HTML5</span>
+                                        <span class="skills__item"><i class='bx bxl-css3'></i>CSS3</span>
+                                        <span class="skills__item"><i class='bx bxl-javascript'></i>JavaScript</span>
+                                        <span class="skills__item"><i class='bx bxl-react'></i>React</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skills__category">
+                                    <h3 class="skills__category-title">Backend</h3>
+                                    <div class="skills__list">
+                                        <span class="skills__item"><i class='bx bx-code-block'></i>Java</span>
+                                        <span class="skills__item"><i class='bx bxl-python'></i>Python</span>
+                                        <span class="skills__item"><i class='bx bx-code-curly'></i>C++</span>
+                                        <span class="skills__item"><i class='bx bx-code-alt'></i>C</span>
+                                        <span class="skills__item"><i class='bx bx-data'></i>MySQL</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="skills__category">
+                                    <h3 class="skills__category-title">Tools & Others</h3>
+                                    <div class="skills__list">
+                                        <span class="skills__item"><i class='bx bxl-git'></i>Git</span>
+                                        <span class="skills__item"><i class='bx bxl-github'></i>GitHub</span>
+                                        <span class="skills__item"><i class='bx bx-mobile-alt'></i>Android Studio</span>
+                                        <span class="skills__item"><i class='bx bxs-paint'></i>Figma</span>
+                                        <span class="skills__item"><i class='bx bx-palette'></i>UI/UX</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="education__content">
-                            <h3 class="education__title">Higher Secondary School Certificate</h3>
-                            <span class="education__studies">Barishal City College, Barishal</span>
-                            <span class="education__year">2021 - 2022</span>
-                            <p class="education__description">Successfully completed higher secondary education with distinction in Science Group, achieving excellent grades in Mathematics, Physics, and Chemistry. This strong foundation in analytical thinking and problem-solving prepared me for advanced studies in Computer Science and Engineering.</p>
+
+                        <div id="education-content" class="skills__content">
+                            <h3 class="skills__subtitle">Academic Excellence</h3>
+                            <p class="skills__text">Educational achievements and academic milestones in Computer Science and Engineering.</p>
+                            
+                            <div class="education__content">
+                                <h3 class="education__title">Bachelor of Science in Computer Science & Engineering</h3>
+                                <span class="education__studies">Southeast University, Dhaka</span>
+                                <span class="education__year">2023 - Present (Expected 2027)</span>
+                                <p class="education__description">Pursuing comprehensive education in software engineering, algorithms, data structures, database systems, and artificial intelligence. Maintaining strong academic performance while actively engaging in programming competitions, hackathons, and collaborative software development projects. Specialized coursework includes Object-Oriented Programming, Web Technologies, Software Engineering, and Computer Networks.</p>
+                            </div>
+                            
+                            <div class="education__content">
+                                <h3 class="education__title">Higher Secondary School Certificate</h3>
+                                <span class="education__studies">Barishal City College, Barishal</span>
+                                <span class="education__year">2021 - 2022</span>
+                                <p class="education__description">Successfully completed higher secondary education with distinction in Science Group, achieving excellent grades in Mathematics, Physics, and Chemistry. This strong foundation in analytical thinking and problem-solving prepared me for advanced studies in Computer Science and Engineering.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!--===== WORK =====-->
+            <!--===== PROJECTS =====-->
             <section class="work section" id="work">
-                <h2 class="section-title">Projects</h2>
-                <p class="work__description">Here are some of the projects I've worked on during my studies and personal learning journey.</p>
+                <div class="container">
+                    <h2 class="section-title reveal">My Projects</h2>
+                    <p class="section-subtitle reveal">Here are some of the projects I've worked on during my studies</p>
 
-                <div class="work__container bd-grid">
-                    <a href="https://kmsiam.github.io/StreamWeb/" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774888632/StreamWeb_tgvvdk.png" alt="Web Development Project - Responsive Website">
-                    </a>
-                    <a href="https://github.com/KMSiam/HomZen" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774886628/HomZen_nd3cmw.png" alt="Mobile App Development Project">
-                    </a>
-                    <a href="https://github.com/KMSiam/Banking-system-" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774889377/MobileBanking_kb0ngz.png" alt="Banking Management System Project">
-                    </a>
-                    <a href="https://facultyreview-bd.vercel.app/" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774890008/FacultyReview_l7uds9.png" alt="Full Stack Web Development Project">
-                    </a>
-                    <a href="https://www.figma.com/community/file/1565414662140521763" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774890397/HomZenFigma_gkylrm.png" alt="App Figma Design Project">
-                    </a>
-                    <a href="https://github.com/KMSiam/Local-Voice-Assistant" target="_blank" rel="noopener noreferrer" class="work__img">
-                        <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774890624/AIVoiceAssistant_pujama.jpg" alt="Python Local Voice Assistant Project">
-                    </a>
+                    <div class="work__container">
+                        <a href="https://kmsiam.github.io/StreamWeb/" target="_blank" rel="noopener noreferrer" class="work__card reveal">
+                            <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774888632/StreamWeb_tgvvdk.png" alt="StreamWeb - Responsive Streaming Website" class="work__card-img">
+                            <div class="work__card-overlay">
+                                <h3 class="work__card-title">StreamWeb</h3>
+                                <p class="work__card-desc">Responsive streaming website with modern UI</p>
+                                <div class="work__card-tags">
+                                    <span class="work__card-tag">HTML</span>
+                                    <span class="work__card-tag">CSS</span>
+                                    <span class="work__card-tag">JavaScript</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/KMSiam/HomZen" target="_blank" rel="noopener noreferrer" class="work__card reveal">
+                            <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774886628/HomZen_nd3cmw.png" alt="HomZen - Smart Home Mobile App" class="work__card-img">
+                            <div class="work__card-overlay">
+                                <h3 class="work__card-title">HomZen</h3>
+                                <p class="work__card-desc">Smart home automation mobile application</p>
+                                <div class="work__card-tags">
+                                    <span class="work__card-tag">Android</span>
+                                    <span class="work__card-tag">Java</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/KMSiam/Banking-system-" target="_blank" rel="noopener noreferrer" class="work__card reveal">
+                            <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774889377/MobileBanking_kb0ngz.png" alt="Banking Management System" class="work__card-img">
+                            <div class="work__card-overlay">
+                                <h3 class="work__card-title">Banking System</h3>
+                                <p class="work__card-desc">Mobile banking management system</p>
+                                <div class="work__card-tags">
+                                    <span class="work__card-tag">Java</span>
+                                    <span class="work__card-tag">OOP</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://facultyreview-bd.vercel.app/" target="_blank" rel="noopener noreferrer" class="work__card reveal">
+                            <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774890008/FacultyReview_l7uds9.png" alt="Faculty Review Platform" class="work__card-img">
+                            <div class="work__card-overlay">
+                                <h3 class="work__card-title">Faculty Review</h3>
+                                <p class="work__card-desc">Full-stack faculty review platform</p>
+                                <div class="work__card-tags">
+                                    <span class="work__card-tag">React</span>
+                                    <span class="work__card-tag">Node.js</span>
+                                    <span class="work__card-tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://www.figma.com/community/file/1565414662140521763" target="_blank" rel="noopener noreferrer" class="work__card reveal">
+                            <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774890397/HomZenFigma_gkylrm.png" alt="HomZen UI/UX Design" class="work__card-img">
+                            <div class="work__card-overlay">
+                                <h3 class="work__card-title">HomZen UI Design</h3>
+                                <p class="work__card-desc">Complete UI/UX design for HomZen app</p>
+                                <div class="work__card-tags">
+                                    <span class="work__card-tag">Figma</span>
+                                    <span class="work__card-tag">UI/UX</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/KMSiam/Local-Voice-Assistant" target="_blank" rel="noopener noreferrer" class="work__card reveal">
+                            <img src="https://res.cloudinary.com/dxqqwmklh/image/upload/v1774890624/AIVoiceAssistant_pujama.jpg" alt="AI Voice Assistant" class="work__card-img">
+                            <div class="work__card-overlay">
+                                <h3 class="work__card-title">AI Voice Assistant</h3>
+                                <p class="work__card-desc">Local AI-powered voice assistant</p>
+                                <div class="work__card-tags">
+                                    <span class="work__card-tag">Python</span>
+                                    <span class="work__card-tag">AI</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
 
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
-                <h2 class="section-title">Contact Me</h2>
+                <div class="container">
+                    <h2 class="section-title reveal">Contact Me</h2>
+                    <p class="section-subtitle reveal">Let's work together on something awesome</p>
 
-                <div class="contact__container bd-grid">
-                    <div>
-                        <h2 class="contact__subtitle">Get In Touch</h2>
-                        <p class="contact__text">Feel free to reach out if you'd like to collaborate on a project, have any questions, or just want to connect!</p>
-                        
-                        <div class="contact__information">
-                            <div class="contact__info-item">
-                                <i class='bx bx-phone contact__icon'></i>
-                                <div>
-                                    <h3 class="contact__info-title">Call Me</h3>
-                                    <span class="contact__info-subtitle">+880 1853086380</span>
-                                </div>
-                            </div>
+                    <div class="contact__container">
+                        <div class="reveal">
+                            <h3 class="contact__subtitle">Get In Touch</h3>
+                            <p class="contact__text">Feel free to reach out if you'd like to collaborate on a project, have any questions, or just want to connect!</p>
                             
-                            <div class="contact__info-item">
-                                <i class='bx bx-envelope contact__icon'></i>
-                                <div>
-                                    <h3 class="contact__info-title">Email</h3>
-                                    <span class="contact__info-subtitle">k.m.siam2019@gmail.com</span>
+                            <div class="contact__information">
+                                <div class="contact__info-item">
+                                    <div class="contact__icon-box">
+                                        <i class='bx bx-phone contact__icon'></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="contact__info-title">Call Me</h4>
+                                        <span class="contact__info-subtitle">+880 1853086380</span>
+                                    </div>
                                 </div>
-                            </div>
-                
-                            <div class="contact__info-item">
-                                <i class='bx bx-map contact__icon'></i>
-                                <div>
-                                    <h3 class="contact__info-title">Location</h3>
-                                    <span class="contact__info-subtitle">Tejgaon, Dhaka, Bangladesh</span>
+                                
+                                <div class="contact__info-item">
+                                    <div class="contact__icon-box">
+                                        <i class='bx bx-envelope contact__icon'></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="contact__info-title">Email</h4>
+                                        <span class="contact__info-subtitle">k.m.siam2019@gmail.com</span>
+                                    </div>
+                                </div>
+                    
+                                <div class="contact__info-item">
+                                    <div class="contact__icon-box">
+                                        <i class='bx bx-map contact__icon'></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="contact__info-title">Location</h4>
+                                        <span class="contact__info-subtitle">Tejgaon, Dhaka, Bangladesh</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
+                        <form action="https://formspree.io/f/xovkboye" method="POST" class="contact__form reveal">
+                            <input type="text" name="name" placeholder="Your Name" class="contact__input" required>
+                            <input type="email" name="email" placeholder="Your Email" class="contact__input" required>
+                            <input type="text" name="subject" placeholder="Subject" class="contact__input" required>
+                            <textarea name="message" rows="5" placeholder="Your Message" class="contact__input" required></textarea>
+                            <button type="submit" class="contact__button button button--primary">Send Message <i class='bx bx-send'></i></button>
+                        </form>
                     </div>
-                    
-                    <form action="https://formspree.io/f/xovkboye" method="POST" class="contact__form">
-                        <input type="text" name="name" placeholder="Your Name" class="contact__input" required>
-                        <input type="email" name="email" placeholder="Your Email" class="contact__input" required>
-                        <input type="text" name="subject" placeholder="Subject" class="contact__input" required>
-                        <textarea name="message" cols="0" rows="7" placeholder="Your Message" class="contact__input" required></textarea>
-                        <button type="submit" class="contact__button button">Send Message <i class='bx bx-right-arrow-alt'></i></button>
-                    </form>
                 </div>
             </section>
         </main>
 
         <!--===== FOOTER =====-->
         <footer class="footer">
-            <p class="footer__title">Siam</p>
-            <div class="footer__social">
-                <a href="https://www.linkedin.com/in/km-siam-973723291/" target="_blank" rel="noopener noreferrer" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://www.facebook.com/share/1HGp73rfXc/" target="_blank" rel="noopener noreferrer" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="https://www.instagram.com/k.m.siam15?igsh=bzZtbXlmZGlpeDF3" target="_blank" rel="noopener noreferrer" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="https://github.com/KMSiam" target="_blank" rel="noopener noreferrer" class="footer__icon"><i class='bx bxl-github' ></i></a>
-                <a href="https://x.com/KMSiam15?t=6vihQMC3jS92u46eRVLMtg&s=09" target="_blank" rel="noopener noreferrer" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            <div class="container">
+                <p class="footer__title">Siam</p>
+                <div class="footer__social">
+                    <a href="https://www.linkedin.com/in/km-siam-973723291/" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.facebook.com/share/1HGp73rfXc/" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/k.m.siam15?igsh=bzZtbXlmZGlpeDF3" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://github.com/KMSiam" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://x.com/KMSiam15?t=6vihQMC3jS92u46eRVLMtg&s=09" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                </div>
+                <p class="footer__copy">&#169; 2026 Siam. All rights reserved</p>
             </div>
-            <p class="footer__copy">&#169; Siam. All rights reserved</p>
         </footer>
 
-
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+        <!--===== SCROLL TO TOP =====-->
+        <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+            <i class='bx bx-up-arrow-alt'></i>
+        </button>
 
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
