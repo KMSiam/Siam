@@ -105,11 +105,19 @@ if (scrollTop) {
     });
 }
 
-// Combined scroll listener
+// Combined scroll listener with throttling for performance
+let isScrolling = false;
 window.addEventListener('scroll', () => {
-    scrollActive();
-    scrollHeader();
-    scrollTopShow();
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            scrollActive();
+            scrollHeader();
+            scrollTopShow();
+            revealOnScroll();
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
 });
 
 // ===== TYPING EFFECT =====
@@ -223,7 +231,6 @@ function revealOnScroll() {
     }
 }
 
-window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
 // ===== PARTICLE BACKGROUND =====
@@ -256,7 +263,11 @@ function initParticles() {
     const lineColor = isDark ? 'rgba(108, 99, 255, 0.1)' : 'rgba(108, 99, 255, 0.2)';
     const accentParticleColor = isDark ? 'rgba(0, 243, 255, 0.4)' : 'rgba(0, 200, 255, 0.6)';
     
-    const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 18000), 100);
+    // Reduce particle count on mobile for performance/battery
+    const isMobile = window.innerWidth < 768;
+    const baseDensity = isMobile ? 35000 : 18000;
+    const maxParticles = isMobile ? 30 : 100;
+    const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / baseDensity), maxParticles);
     
     class Particle {
         constructor() {
