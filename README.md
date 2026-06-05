@@ -5,6 +5,7 @@
 [![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Vercel Badge](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Project Report](https://img.shields.io/badge/Project_Report-PDF-red?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](Portfolio_Report.pdf)
 
 > A premium, modern, and fully responsive personal portfolio website showcasing my academic journey, technical skills, and completed projects as a Computer Science & Engineering student at Southeast University.
 
@@ -26,6 +27,7 @@
 - **Animated Statistical Counters** – Numerical statistics (Completed Projects, Programming Languages, Experience Months) that scroll-trigger and count up using optimized request-frame loops.
 - **Integrated Contact Form** – Serverless contact processing using a Formspree secure endpoint, equipped with validation and spam control.
 - **CV Download Module** – Quick access to a downloadable PDF curriculum vitae stored directly within the local assets.
+- **Academic Project Report** – Includes a comprehensive, Microsoft Word-compatible [Portfolio_Report.pdf](Portfolio_Report.pdf) documenting the website objectives, features, system architecture, validation protocols, testing specifications, development phases, and technical reflection.
 
 ---
 
@@ -57,6 +59,7 @@ portfolio-responsive-complete-main/
 ├── index.html              # Main webpage and layout entry point
 ├── preview.png             # Visual preview of the portfolio page
 ├── README.md               # Technical project documentation
+├── Portfolio_Report.pdf    # Academic project report (PDF version)
 ├── assets/
 │   ├── css/
 │   │   └── styles.css      # Core stylesheet containing variables, layouts, and animations
